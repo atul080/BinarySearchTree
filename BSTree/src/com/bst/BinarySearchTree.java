@@ -86,5 +86,28 @@ public class BinarySearchTree<T extends Comparable> {
     public void size() {
         System.out.print("\nSize of binary search tree is: " + size);
     }
+    public <T> void search(T value) {
+        search(root, value);
+        //prints value not found if program doesn't exits in search(root,value) method
+        System.out.println("\nValue not found");
+    }
 
+
+    /** //@param BinarySearchNode and value
+     * if input value is found then prints the value and exits the program.
+     * does recursive traversing to find the value.
+     *
+     */
+    public  <T> void search(BinarySearchNode root, T value) {
+        if (root == null) {
+            System.out.println("\nTree is blank.");
+        } else if (root.data.compareTo(value) == 0) {
+            System.out.println("\nValue found");
+            System.exit(0);
+        } else if (root.data.compareTo(value) < 0) {
+            search(root.right, value);
+        } else {
+            search(root.left, value);
+        }
+    }
 }

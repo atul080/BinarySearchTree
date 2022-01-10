@@ -32,6 +32,8 @@ public class BinarySearchOperations {
         tree.printBST();
         //printing BST size
         tree.size();
+        //searching an element
+        tree.search(63);
 
     }
 }
