@@ -14,9 +14,24 @@ public class BinarySearchOperations {
         tree.insertInBST(56);
         tree.insertInBST(30);
         tree.insertInBST(70);
+        tree.insertInBST(56);
+        tree.insertInBST(30);
+        tree.insertInBST(70);
+        tree.insertInBST(22);
+        tree.insertInBST(40);
+        tree.insertInBST(11);
+        tree.insertInBST(16);
+        tree.insertInBST(3);
+        tree.insertInBST(60);
+        tree.insertInBST(65);
+        tree.insertInBST(63);
+        tree.insertInBST(67);
+        tree.insertInBST(95);
         //printing the final tree by calling printBST() method
         System.out.print("Binary Search Tree: ");
         tree.printBST();
+        //printing BST size
+        tree.size();
 
     }
 }

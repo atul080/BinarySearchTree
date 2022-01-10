@@ -7,6 +7,8 @@ package com.bst;
 public class BinarySearchTree<T extends Comparable> {
     //variable declaration
     private BinarySearchNode root;
+    private int size=0;
+
 
 
     /**
@@ -24,12 +26,13 @@ public class BinarySearchTree<T extends Comparable> {
      * compare value with root data and call left or right based on comparison
      * if value is small than root then inserts left else right
      */
-    private <T> BinarySearchNode insertInBST(BinarySearchNode BSNode, T data) {
+    private <T> BinarySearchNode insertInBST(BinarySearchNode BSTNode, T data) {
 
         /**
          * Creates new node if it's null
          */
-        if (BSNode == null) {
+        if (BSTNode == null) {
+            size++;
             return new BinarySearchNode((Comparable) data);
         }
 
@@ -38,8 +41,8 @@ public class BinarySearchTree<T extends Comparable> {
          * if data is less than the root,
          * insert data to left
          */
-        if (BSNode.data.compareTo(data)>0) {
-            BSNode.left = insertInBST(BSNode.left, data);
+        if (BSTNode.data.compareTo(data)>0) {
+            BSTNode.left = insertInBST(BSTNode.left, data);
         }
 
         /**
@@ -47,10 +50,10 @@ public class BinarySearchTree<T extends Comparable> {
          * if data is more than the root,
          * insert data to right
          **/
-        if (BSNode.data.compareTo(data)<0) {
-            BSNode.right = insertInBST(BSNode.right, data);
+        if (BSTNode.data.compareTo(data)<0) {
+            BSTNode.right = insertInBST(BSTNode.right, data);
         }
-        return BSNode;
+        return BSTNode;
     }
 
     /**
@@ -76,6 +79,12 @@ public class BinarySearchTree<T extends Comparable> {
             //recursive call right
             print(root.right);
         }
+    }
+    /**
+     * size() method to print the size of binary search tree.
+     */
+    public void size() {
+        System.out.print("\nSize of binary search tree is: " + size);
     }
 
 }
